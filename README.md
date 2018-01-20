@@ -127,6 +127,79 @@ However, don't worry too much about this, as modern day computers are incredible
 
 ## Challenge
 
+### Higher Order By
+
+```
+function canEnterBar(validation) {
+  if (validation) {
+    console.log('you may enter the bar');
+  } else {
+    console.log('go home');
+  }
+}
+
+function isOfAge(age) {
+  // writer your code here
+}
+
+// 1. using a higher order function log the "you may enter the bar" log
+// 2. using a higher order function log the "go home" log
+```
+
 ### Refactor the imperative program
 
+```
+// refactor the below code in a declartive way
+
+var programmers = [
+  {
+    name: 'john',
+    language: 'javascript',
+    age: 28,
+    sex: 'male'
+  },
+  {
+    name: 'tresha',
+    language: 'python',
+    age: 20,
+    sex: 'female'
+  },
+  {
+    name: 'jessica',
+    langage: 'golang',
+    age: 24,
+    sex: 'female'
+  }
+];
+console.log('******************************')
+console.log('initial value', programmers);
+// 1. filter out only the female programmers
+var femalesOnly = [];
+for (var j = 0; j < programmers.length; j++) {
+  if (programmers[j].sex === 'female' ) {
+    femalesOnly.push(programmers[j]);
+  }
+}
+console.log('******************************')
+console.log('female only programmers', femalesOnly);
+// 2. add one to each female programmers age
+for (var i = 0; i < femalesOnly.length; i++) {
+  femalesOnly[i].age += 1;
+}
+console.log('******************************')
+console.log('after adding to age', femalesOnly);
+
+// 3. sum up their combined age
+var totaleAgeFemale = 0;
+for (var k = 0; k < femalesOnly.length; k++) {
+  totaleAgeFemale += femalesOnly[k].age;
+}
+console.log('******************************')
+console.log('total age of female programmers', totaleAgeFemale) // 46;
+```
+
 ### ChainOrama
+
+Taking the previous problem, e.a. Refactor the imperative program
+can you filter out just the female engineers, add one to each of their age,
+and finally sum up their age in one composition?
